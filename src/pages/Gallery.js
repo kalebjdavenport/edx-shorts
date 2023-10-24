@@ -3,8 +3,17 @@ import edxBody from "../assets/edx-body.png";
 import { Icon, IconButton } from "@edx/paragon";
 import { PlayArrow } from "@edx/paragon/icons";
 import playButton from "../assets/playButton.svg";
+import cs50Img from "../assets/cs50-thumb1.png";
 
 export default function Gallery() {
+  const getUrl = (i) => {
+    if (i === 0) {
+      return `url(${cs50Img})`;
+    }
+    const url = `url('https://picsum.photos/id/${10 + i}/240/400')`;
+    return url;
+  };
+
   return (
     <>
       <img className="w-100 pt-2 pb-2" src={edxHeader} />
@@ -24,14 +33,12 @@ export default function Gallery() {
           </p>
         </div>
         <div className="overflow-scroll whitespace-nowrap">
-          {Array.from({ length: 5 }, (x, i) => (
+          {Array.from({ length: 6 }, (x, i) => (
             <span
               className={`bg-gray-200 mr-[30px] inline-flex justify-center items-center`}
               key={`reel-${i}`}
               style={{
-                backgroundImage: `url('https://picsum.photos/id/${
-                  10 + i
-                }/240/400')`,
+                backgroundImage: getUrl(i),
                 width: "240px",
                 height: "400px",
                 padding: "16px, 12px, 16px, 12px",
