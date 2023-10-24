@@ -3,9 +3,9 @@ import Video from "../Video";
 import "../Player.css"
 import cs50Promo from '../cs50.mp4';
 import uscDptPromo from '../usc_dpt.mp4';
-import uscDpt2Promo from '../usc_dpt2.mp4';
-import coursePromo from '../course_promo.mp4'
-import influencerPromo from '../Influencer.mp4';
+import uscDpt2Promo from '../uscpromo.mp4';
+import coursePromo from '../promo.mp4'
+import influencerPromo from '../influencer.mp4';
 
 function Player() {
   const videos = videoData.map(video => {
