@@ -17,7 +17,7 @@ export default function Gallery() {
 
   return (
     <>
-      <img className="w-100 pt-2 pb-2" src={edxHeader} />
+      <img className="w-100 pt-2 pb-2" src={edxHeader} style={{ width: '100%' }} />
       <div
         className="p-[30px] pr-0"
         style={{ background: "linear-gradient(rgba(0,0,0,0.05), transparent)" }}
@@ -33,25 +33,30 @@ export default function Gallery() {
         </div>
         <div className="overflow-scroll whitespace-nowrap">
           {Array.from({ length: 6 }, (x, i) => (
-            <span
-              className={`bg-gray-200 mr-[30px] inline-flex justify-center items-center`}
-              key={`reel-${i}`}
-              style={{
-                backgroundImage: getUrl(i),
-                width: "240px",
-                height: "400px",
-                padding: "16px, 12px, 16px, 12px",
-                borderRadius: "8px",
-                justify: "space-between",
-              }}
-            >
-              <Link to="/play">
-                <img
-                  className="top-28 left-12 text-white"
-                  src={playButton}
-                  style={{ width: "50px", height: "50px" }}
-                />
-              </Link>
+            <span className="w-[240px] h-[400px] inline-block mr-[30px]">
+              <span
+                className={`bg-gray-200 mr-[30px] inline-flex justify-center items-center`}
+                key={`reel-${i}`}
+                style={{
+                  backgroundImage: getUrl(i),
+                  width: "240px",
+                  height: "400px",
+                  padding: "16px, 12px, 16px, 12px",
+                  borderRadius: "8px",
+                  justify: "space-between",
+                }}
+              >
+                <Link to="/play">
+                  <img
+                    className="top-28 left-12 text-white"
+                    src={playButton}
+                    style={{ width: "50px", height: "50px" }}
+                  />
+                </Link>
+              </span>
+                <p className="bottom-0 ml-52 text-[14px] font-sans text-[#787878]">
+                2:23
+                </p>
             </span>
           ))}
         </div>
