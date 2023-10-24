@@ -4,6 +4,7 @@ import { Icon, IconButton } from "@edx/paragon";
 import { PlayArrow } from "@edx/paragon/icons";
 import playButton from "../assets/playButton.svg";
 import cs50Img from "../assets/cs50-thumb1.png";
+import { Link } from "react-router-dom";
 
 export default function Gallery() {
   const getUrl = (i) => {
@@ -24,13 +25,11 @@ export default function Gallery() {
         <div className="flex justify-start items-center">
           <h2
             className="mb-8 mr-4 col-start-1 row-start-2 max-w-[36rem] text-4xl font-bold tracking-tight text-slate-900 sm:text-7xl xl:max-w-[43.5rem]"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            style={{ fontFamily: "Inter, sans-serif" }}
           >
             Course previews
           </h2>
-          <p className="text-xs mb-3 underline">
-          See all
-          </p>
+          <p className="text-xs mb-3 underline">See all</p>
         </div>
         <div className="overflow-scroll whitespace-nowrap">
           {Array.from({ length: 6 }, (x, i) => (
@@ -46,17 +45,24 @@ export default function Gallery() {
                 justify: "space-between",
               }}
             >
-              <img
-                className="top-28 left-12 text-white"
-                src={playButton}
-                style={{ width: "50px", height: "50px" }}
-              />
+              <Link to="/play">
+                <img
+                  className="top-28 left-12 text-white"
+                  src={playButton}
+                  style={{ width: "50px", height: "50px" }}
+                />
+              </Link>
             </span>
           ))}
         </div>
       </div>
-      <div style={{ background: "linear-gradient(rgba(0,0,0,0.05), transparent)", overflow: 'hidden' }}>
-        <img src={edxBody} style={{ transform: 'translate(0, -100px)' }}/>
+      <div
+        style={{
+          background: "linear-gradient(rgba(0,0,0,0.05), transparent)",
+          overflow: "hidden",
+        }}
+      >
+        <img src={edxBody} style={{ transform: "translate(0, -100px)" }} />
       </div>
     </>
   );
