@@ -1,11 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Gallery from "./pages/Gallery";
+import Player from "./pages/Player";
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline mt-8 text-center">
-      Hello world!
-    </h1>
+    <main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/play" element={<Player />} />
+      </Routes>
+    </main>
   );
 }
 
