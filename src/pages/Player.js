@@ -8,9 +8,10 @@ import coursePromo from '../promo.mp4'
 import influencerPromo from '../influencer.mp4';
 
 function Player() {
-  const videos = videoData.map(video => {
+  const videos = videoData.map((video, index) => {
     return (
       <Video
+        key={index}
         url={video.url}
         duration={video.duration}
         views={video.views}

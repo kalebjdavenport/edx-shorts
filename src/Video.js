@@ -18,10 +18,10 @@ function Video({ url, views, description, duration, logoSrc, title }) {
       setShouldShowContent(true)
       const timer = setTimeout(() => {
         setShouldShowContent(false)
-      }, 5000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [isVideoVisible]);
 
   return (
     <div className="video" ref={containerRef}>
@@ -31,10 +31,13 @@ function Video({ url, views, description, duration, logoSrc, title }) {
         src={url}
         autoPlay
         ref={videoRef}
+        controls
+        title={title}
+        muted
       >
       </video>
       <VideoHeader />
-      {true ? (
+      {shouldShowContent ? (
         <>
           <VideoFooter logoSrc={logoSrc} title={title} views={views} description={description} duration={duration} />
           <VideoSidebar />
