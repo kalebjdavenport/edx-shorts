@@ -3,7 +3,13 @@ import edxBody from "../assets/edx-body.png";
 import { Icon, IconButton } from "@edx/paragon";
 import { PlayArrow } from "@edx/paragon/icons";
 import playButton from "../assets/playButton.svg";
-import cs50Img from "../assets/cs50-thumb1.png";
+import thumb0 from "../assets/thumb0.png";
+import thumb1 from "../assets/thumb1.png";
+import thumb2 from "../assets/thumb2.png";
+import thumb3 from "../assets/thumb3.png";
+import thumb4 from "../assets/thumb4.png";
+
+
 import { Link } from "react-router-dom";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import "./Gallery.css";
@@ -11,10 +17,20 @@ import "./Gallery.css";
 export default function Gallery() {
   const getUrl = (i) => {
     if (i === 0) {
-      return `url(${cs50Img})`;
+      return `url(${thumb0})`;
     }
-    const url = `url('https://picsum.photos/id/${10 + i}/240/400')`;
-    return url;
+    if (i === 1) {
+      return `url(${thumb1})`;
+    }
+    if (i === 2) {
+      return `url(${thumb2})`;
+    }
+    if (i === 3) {
+      return `url(${thumb3})`;
+    }
+    if (i === 4) {
+      return `url(${thumb4})`;
+    }
   };
 
   return (
@@ -34,7 +50,7 @@ export default function Gallery() {
           <a className="more-link">See all</a>
         </div>
         <div className="reel">
-          {Array.from({ length: 6 }, (x, i) => (
+          {Array.from({ length: 5 }, (x, i) => (
             <span className="thumbnail-container">
               <span
                 className="thumbnail"
