@@ -6,6 +6,8 @@ const useVideoAutoPlayback = options => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
 
   const cb = entries => {
+    if (!videoRef?.current) return;
+
     const [entry] = entries;
     if (entry.isIntersecting) {
       videoRef.current.play();
