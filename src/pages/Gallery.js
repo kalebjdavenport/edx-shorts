@@ -5,6 +5,7 @@ import { PlayArrow } from "@edx/paragon/icons";
 import playButton from "../assets/playButton.svg";
 import cs50Img from "../assets/cs50-thumb1.png";
 import { Link } from "react-router-dom";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import "./Gallery.css";
 
 export default function Gallery() {
@@ -18,7 +19,7 @@ export default function Gallery() {
 
   return (
     <div className="gallery">
-      <img className="edx-header" src={edxHeader} style={{ width: '100%' }} />
+      <img className="edx-header" src={edxHeader} style={{ width: "100%" }} />
       <div
         className="gallery-background"
         style={{ background: "linear-gradient(rgba(0,0,0,0.05), transparent)" }}
@@ -42,6 +43,10 @@ export default function Gallery() {
                   backgroundImage: getUrl(i),
                 }}
               >
+                <MoreVertIcon
+                  className="more-icon"
+                  style={{ color: "white" }}
+                />
                 <Link to="/play">
                   <img
                     className="play-button"
@@ -50,10 +55,14 @@ export default function Gallery() {
                     height={50}
                   />
                 </Link>
+                <div className="thumbnail-footer">
+                  <h3 className="thumbnail-title">
+                    CS50's Introduction to Computer Science
+                  </h3>
+                  <h4 className="thumbnail-subtitle">1.7M views</h4>
+                </div>
               </span>
-                <p className="duration">
-                2:23
-                </p>
+              <p className="duration">2:23</p>
             </span>
           ))}
         </div>
@@ -64,7 +73,10 @@ export default function Gallery() {
           overflow: "hidden",
         }}
       >
-        <img src={edxBody} className="edx-body" style={{ transform: "translate(0, -100px)" }} />
+        <img
+          src={edxBody}
+          className="edx-body"
+        />
       </div>
     </div>
   );
