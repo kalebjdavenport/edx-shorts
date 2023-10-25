@@ -5,6 +5,7 @@ import { PlayArrow } from "@edx/paragon/icons";
 import playButton from "../assets/playButton.svg";
 import cs50Img from "../assets/cs50-thumb1.png";
 import { Link } from "react-router-dom";
+import "./Gallery.css";
 
 export default function Gallery() {
   const getUrl = (i) => {
@@ -16,45 +17,41 @@ export default function Gallery() {
   };
 
   return (
-    <>
-      <img className="w-100 pt-2 pb-2" src={edxHeader} style={{ width: '100%' }} />
+    <div className="gallery">
+      <img className="edx-header" src={edxHeader} style={{ width: '100%' }} />
       <div
-        className="p-[30px] pr-0"
+        className="gallery-background"
         style={{ background: "linear-gradient(rgba(0,0,0,0.05), transparent)" }}
       >
-        <div className="flex justify-start items-center">
+        <div className="preview-header">
           <h2
-            className="mb-8 mr-4 col-start-1 row-start-2 max-w-[36rem] text-4xl font-bold tracking-tight text-slate-900 sm:text-7xl xl:max-w-[43.5rem]"
+            className="preview-headline"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             Course previews
           </h2>
-          <p className="text-xs mb-3 underline">See all</p>
+          <a className="more-link">See all</a>
         </div>
-        <div className="overflow-scroll whitespace-nowrap">
+        <div className="reel">
           {Array.from({ length: 6 }, (x, i) => (
-            <span className="w-[240px] h-[400px] inline-block mr-[30px]">
+            <span className="thumbnail-container">
               <span
-                className={`bg-gray-200 mr-[30px] inline-flex justify-center items-center`}
+                className="thumbnail"
                 key={`reel-${i}`}
                 style={{
                   backgroundImage: getUrl(i),
-                  width: "240px",
-                  height: "400px",
-                  padding: "16px, 12px, 16px, 12px",
-                  borderRadius: "8px",
-                  justify: "space-between",
                 }}
               >
                 <Link to="/play">
                   <img
-                    className="top-28 left-12 text-white"
+                    className="play-button"
                     src={playButton}
-                    style={{ width: "50px", height: "50px" }}
+                    width={50}
+                    height={50}
                   />
                 </Link>
               </span>
-                <p className="bottom-0 ml-52 text-[14px] font-sans text-[#787878]">
+                <p className="duration">
                 2:23
                 </p>
             </span>
@@ -67,8 +64,8 @@ export default function Gallery() {
           overflow: "hidden",
         }}
       >
-        <img src={edxBody} style={{ transform: "translate(0, -100px)" }} />
+        <img src={edxBody} className="edx-body" style={{ transform: "translate(0, -100px)" }} />
       </div>
-    </>
+    </div>
   );
 }
