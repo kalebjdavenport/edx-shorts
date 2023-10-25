@@ -42,7 +42,7 @@ export default function Gallery() {
                   backgroundImage: getUrl(i),
                 }}
               >
-                <Link to="/play">
+                <Link to={`/play/${i}`}>
                   <img
                     className="play-button"
                     src={playButton}
