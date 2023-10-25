@@ -5,6 +5,12 @@
   "dependencies": {
     "@edx/browserslist-config": "^1.2.0",
     "@edx/paragon": "^20.45.6",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.14.15",
+    "@mui/material": "^5.14.15",
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.2.6",
@@ -18,11 +24,13 @@
     "react-dom": "^17.0.2",
     "react-intl": "^5.20.12",
     "react-redux": "^7.2.4",
+    "react-router-dom": "^6.17.0",
     "react-scripts": "^5.0.1",
     "redux": "^4.0.5",
     "sass": "^1.32.8",
     "typescript": "^4.3.5",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "tailwindcss": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
