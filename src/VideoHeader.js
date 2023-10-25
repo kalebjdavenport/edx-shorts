@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 function VideoHeader() {
   return (
     <div className="videoHeader">
-      <Link to="/gallery" style={{ color: 'white' }}>
+      <Link to="/" style={{ color: 'white' }}>
         <ArrowBackIosIcon />
       </Link>
-      <Link to="/gallery" style={{ color: 'white' }}>
+      <Link to="/" style={{ color: 'white' }}>
         <CloseIcon />
       </Link>
     </div>
