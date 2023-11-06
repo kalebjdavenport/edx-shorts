@@ -1,0 +1,9 @@
+.videoHeader {
+  position: relative;
+  color: white;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  bottom: 800px;
+}
